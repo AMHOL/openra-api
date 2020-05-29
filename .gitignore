@@ -1,0 +1,9 @@
+tmp/*
+!tmp/pids
+tmp/pids/*
+!tmp/pids/.keep
+!tmp/sockets
+tmp/sockets/*
+!tmp/sockets/.keep
+log/*
+!log/.keep

@@ -1,0 +1,28 @@
+version: '3.5'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./config/docker/app/Dockerfile
+    command: ['start_server']
+    depends_on:
+      - nginx
+    env_file: .env
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/usr/src/app:cached
+      - bundle-cache:/usr/local/bundle:cached
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./config/docker/nginx/Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - .:/usr/src/app:cached
+
+volumes:
+  bundle-cache: null
