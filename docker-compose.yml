@@ -26,3 +26,5 @@ services:
 
 volumes:
   bundle-cache: null
+
+restart: always
