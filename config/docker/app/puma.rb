@@ -12,5 +12,4 @@ daemonize false
 
 preload_app!
 
-port 3000
-environment 'development'
+environment ENV.fetch('RACK_ENV', 'production')
