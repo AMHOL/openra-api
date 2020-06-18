@@ -7,3 +7,4 @@ tmp/sockets/*
 !tmp/sockets/.keep
 log/*
 !log/.keep
+.env
