@@ -8,3 +8,4 @@ tmp/sockets/*
 log/*
 !log/.keep
 .env
+docker-compose.override.yml
