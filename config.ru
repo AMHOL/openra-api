@@ -2,4 +2,4 @@
 
 require_relative 'config/environment'
 
-run Sinatra::Application
+run Openra::API::Application
