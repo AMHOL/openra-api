@@ -5,10 +5,8 @@ module Openra
     module Endpoints
       module Replays
         class Data
-          def call(response, params)
-            data = Openra::Commands::Replays::ExtractData.new.call(
-              params['data']['tempfile'].path
-            )
+          def call(response, file)
+            data = Openra::Commands::Replays::ExtractData.new.call(file.path)
 
             response.status(201)
             response.body(JSON.dump(data))
