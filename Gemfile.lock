@@ -35,7 +35,7 @@ GEM
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.2)
-    openra (4.0.0)
+    openra (4.0.1)
       bindata
       bundler
       dry-cli
