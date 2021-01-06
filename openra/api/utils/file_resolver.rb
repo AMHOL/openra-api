@@ -6,6 +6,7 @@ module Openra
   module API
     module Utils
       class FileResolver
+        InvalidHashError = Class.new(StandardError)
         SOURCES = {
           upload: ->(params) { params['data']['tempfile'] },
           oraladder: ->(params) {
@@ -17,6 +18,8 @@ module Openra
         }
         def call(source, params)
           SOURCES.fetch(source).call(params)
+        rescue OpenURI::HTTPError
+          raise InvalidHashError, "Invalid hash: '#{params[:hash]}'"
         end
       end
     end

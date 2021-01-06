@@ -12,7 +12,7 @@ module Openra
             response.body(JSON.dump(data))
           rescue
             response.status(500)
-            response.body(JSON.dump({}))
+            response.body(JSON.dump(message: 'Unknown server error'))
           end
         end
       end

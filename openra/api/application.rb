@@ -59,6 +59,10 @@ module Openra
       error Sinatra::NotFound do
         [404, '{}']
       end
+
+      error Openra::API::Utils::FileResolver::InvalidHashError do |error|
+        [500, JSON.dump(message: error.message)]
+      end
     end
   end
 end
