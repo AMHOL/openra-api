@@ -15,8 +15,16 @@ module Openra
           ragl: ->(params) {
             URI.open("http://ragl.org/replay/#{params[:hash]}")
           }
-        }
-        def call(source, params)
+        }.freeze
+
+        attr_reader :source
+        private :source
+
+        def initialize(source)
+          @source = source
+        end
+
+        def call(params)
           SOURCES.fetch(source).call(params)
         rescue OpenURI::HTTPError
           raise InvalidHashError, "Invalid hash: '#{params[:hash]}'"
