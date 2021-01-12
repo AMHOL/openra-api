@@ -14,7 +14,11 @@ services:
     volumes:
       - .:/usr/src/app:cached
       - bundle-cache:/usr/local/bundle:cached
-
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1k"
+        max-file: "3"
   nginx:
     image: staticfloat/nginx-certbot
     env_file: .env
@@ -25,7 +29,11 @@ services:
       - .:/usr/src/app:cached
       - ./conf.d:/etc/nginx/user.conf.d:ro
       - letsencrypt:/etc/letsencrypt
-
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1k"
+        max-file: "3"
 volumes:
   bundle-cache: null
   letsencrypt: null
