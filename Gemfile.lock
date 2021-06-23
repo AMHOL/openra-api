@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    bindata (2.4.8)
+    bindata (2.4.10)
     concurrent-ruby (1.1.7)
     dry-cli (0.6.0)
       concurrent-ruby (~> 1.0)
