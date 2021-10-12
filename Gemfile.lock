@@ -34,7 +34,7 @@ GEM
     ice_nine (0.11.2)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    nio4r (2.5.7)
+    nio4r (2.5.8)
     openra (4.0.2)
       bindata
       bundler
@@ -42,7 +42,7 @@ GEM
       dry-struct
       dry-transformer
       dry-types
-    puma (4.3.8)
+    puma (4.3.9)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-cors (1.1.1)
